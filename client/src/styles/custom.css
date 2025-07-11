@@ -1,0 +1,252 @@
+/* === Общий шрифт === */
+body, button, input, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+/* Мягкий текстурированный фон в стиле майя */
+body {
+  background-image: url("C:\Users\Oleg\tzolkin-shop\client\public\images\body1.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #1c1a17; /* fallback тёмно-коричневый/чёрный */
+  color: #f5f5dc;
+}
+
+/* Немного полупрозрачности для карточек, чтобы фон не мешал */
+.homm-card {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fdf6e3;
+  border: 2px solid #d4af37; /* золотистая рамка */
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* === Кнопки === */
+.btn-homm {
+  background: linear-gradient(#e6c164, #b38e2e);
+  color: #2c2c2c;
+  font-weight: bold;
+  border: 2px solid #6b4e00;
+  border-radius: 4px;
+  padding: 6px 16px;
+  box-shadow: inset 0 0 3px #fff7c0, 1px 1px 2px #000;
+  text-shadow: 1px 1px 0 #fff5c2;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-homm:hover {
+  background: linear-gradient(#f0d67c, #c1972e);
+  color: #000;
+  box-shadow: 0 0 6px #ffe;
+}
+
+/* === Карточки === */
+.card.homm-card {
+  background: #1a1a1a;
+  color: #f5f5dc;
+  border: 2px solid #a67c00;
+  box-shadow: 0 0 12px #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card.homm-card .card-title {
+  font-size: 1.2rem;
+  color: #f0e68c;
+}
+
+.card.homm-card .card-text {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* === Ховер для карточек === */
+.card.homm-card:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 12px #ffd700;
+  transform: scale(1.01);
+}
+
+/* === Эффект нажатия кнопки === */
+.press-effect:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Градиентный фон для Navbar */
+.navbar-mayan {
+  background: linear-gradient(to right, #3b2f1c, #6e4b1f, #a06f30);
+  border-bottom: 2px solid #cfa94d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  color: #f5f5dc;
+}
+
+.navbar-mayan .nav-link {
+  color: #f5f5dc !important;
+}
+
+.navbar-mayan .nav-link:hover {
+  color: #ffcc66 !important;
+}
+
+.navbar-mayan .navbar-brand img {
+  filter: drop-shadow(1px 1px 2px #000);
+}
+
+/* Стили для кнопок пагинации в стиле HoMM */
+.pagination .page-link {
+  background: linear-gradient(to bottom, #a06f30, #6e4b1f);
+  border: 2px solid #cfa94d;
+  color: #f5f5dc;
+  font-weight: bold;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.pagination .page-link:hover {
+  background: linear-gradient(to bottom, #cfa94d, #a06f30);
+  color: #fff;
+  box-shadow: 0 0 6px rgba(255, 204, 102, 0.7);
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(to bottom, #ffd98e, #e5ac40);
+  color: #000;
+  border-color: #cfa94d;
+}
+
+.pagination .page-link:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.collections-section {
+  background: linear-gradient(
+    to bottom,
+    #f2e2b6 0%,
+    #e5c06d 50%,
+    #d9a741 100%
+  );
+  padding: 60px 0;
+  border-top: 2px solid #a8762c;
+  border-bottom: 2px solid #a8762c;
+}
+
+.about-section {
+  background: linear-gradient(to bottom, #3e2d24, #1e120e);
+  padding-bottom: 80px;
+}
+
+.cacao-names {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #ffcf88;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.animated-cacao-image {
+  width: 100%;
+  max-width: 700px;
+  animation: cacaoFloat 6s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@keyframes cacaoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 3px #ffcc66); }
+  50% { filter: drop-shadow(0 0 10px #ffcc66); }
+}
+
+.form-box {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+/* === HOMM UTILITY STYLES === */
+
+/* Кнопка в стиле HOMM */
+.homm-button {
+  background-image: url("https://heroes.thelazy.net/images/0/0f/Marble-dark.png");
+  border-image-source: url("https://heroes.thelazy.net/images/9/9b/Border-small.png");
+  border-image-slice: 4;
+  border-image-width: 4px;
+  border-image-repeat: stretch;
+  color: #f7de7b;
+  text-shadow: 1px 1px 1px black;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  padding: 8px 16px;
+  transition: transform 0.1s ease;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+.homm-button:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 0 4px #00000088;
+}
+.homm-button:hover {
+  background-image: url("https://heroes.thelazy.net/images/6/61/Leather-blue-dark.png");
+}
+
+/* Карточка товара/коллекции */
+.homm-card {
+  border-image-source: url("https://heroes.thelazy.net/images/c/c7/Border-gold.png");
+  border-image-slice: 8;
+  border-image-width: 8px;
+  border-image-repeat: repeat;
+  background-image: url("https://heroes.thelazy.net/images/b/b4/Leather-extra-dark.png");
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
+  padding: 16px;
+  font-family: 'Georgia', serif;
+}
+
+/* Обёртка блока */
+.homm-box {
+  background-image: url("https://heroes.thelazy.net/images/0/0f/Marble-dark.png");
+  border-image-source: url("https://heroes.thelazy.net/images/9/9b/Border-small.png");
+  border-image-slice: 4;
+  border-image-width: 4px;
+  border-image-repeat: stretch;
+  padding: 16px;
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
+  font-family: 'Georgia', serif;
+}
+
+/* Заголовок */
+.homm-heading {
+  color: #f7de7b;
+  text-shadow: 2px 2px 2px #000;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+}
+
+/* Поле ввода */
+.homm-input {
+  background-image: url("https://heroes.thelazy.net/images/0/0f/Marble-dark.png");
+  border-image-source: url("https://heroes.thelazy.net/images/c/c7/Border-gold.png");
+  border-image-slice: 8;
+  border-image-width: 8px;
+  border-image-repeat: repeat;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  text-shadow: 1px 1px 1px black;
+  padding: 8px;
+}
+

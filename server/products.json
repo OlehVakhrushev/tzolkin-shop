@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Strawberry & Honey Chocolate",
+    "description": "Delicate taste and the aroma of summer.",
+    "price": "$5.99",
+    "image": "/images/strawberry_collection.png",
+    "weight": "80g",
+    "ingredients": "Cacao mass, honey, dried strawberries",
+    "country": "Guatemala"
+  },
+  {
+    "id": 2,
+    "title": "Nutty Chocolate",
+    "description": "Crunchy nuts in rich dark chocolate.",
+    "price": "$6.49",
+    "image": "/images/stones2.png",
+    "weight": "90g",
+    "ingredients": "/images/stones2.png",
+    "country": "Peru"
+  },
+  {
+    "id": 3,
+    "title": "Mayan Original",
+    "description": "The authentic taste of ancient times.",
+    "price": "$7.99",
+    "image": "/images/big_plate.png",
+    "weight": "100g",
+    "ingredients": "Cacao mass, honey, spices",
+    "country": "Mexico"
+  },
+  {
+    "id": 4,
+    "title": "Blueberry Dark Chocolate",
+    "description": "A bold and fruity experience with real blueberries.",
+    "price": "$6.99",
+    "image": "/images/blueberry-chocolate.jpg",
+    "weight": "85g",
+    "ingredients": "Cacao mass, honey, dried blueberries",
+    "country": "Colombia"
+  },
+  {
+    "id": 5,
+    "title": "Raspberry Dream",
+    "description": "Tangy raspberries blended into smooth dark chocolate.",
+    "price": "$6.79",
+    "image": "/images/raspberry-chocolate.jpg",
+    "weight": "80g",
+    "ingredients": "Cacao mass, honey, freeze-dried raspberries",
+    "country": "Ecuador"
+  },
+  {
+    "id": 6,
+    "title": "Papaya Sunrise",
+    "description": "Tropical papaya meets Mayan cacao in perfect harmony.",
+    "price": "$7.49",
+    "image": "/images/papaya-chocolate.jpg",
+    "weight": "90g",
+    "ingredients": "Cacao mass, honey, dried papaya",
+    "country": "Guatemala"
+  },
+  {
+    "id": 7,
+    "title": "Coconut Bliss",
+    "description": "Exotic coconut flakes in silky dark chocolate.",
+    "price": "$6.89",
+    "image": "/images/coconut-chocolate.jpg",
+    "weight": "95g",
+    "ingredients": "Cacao mass, honey, shredded coconut",
+    "country": "Thailand"
+  },
+  {
+    "id": 8,
+    "title": "Pineapple Heat",
+    "description": "Sweet pineapple with a subtle spicy kick.",
+    "price": "$7.29",
+    "image": "/images/pineapple-chocolate.jpg",
+    "weight": "85g",
+    "ingredients": "Cacao mass, honey, dried pineapple, chili",
+    "country": "Mexico"
+  },
+  {
+    "id": 9,
+    "title": "Mango & Chia Crunch",
+    "description": "Dried mango pieces with crunchy chia seeds in dark chocolate.",
+    "price": "$6.99",
+    "image": "/images/mango-chia-chocolate.jpg",
+    "weight": "100g",
+    "ingredients": "Cacao mass, honey, dried mango, chia seeds",
+    "country": "Peru"
+  }
+]
