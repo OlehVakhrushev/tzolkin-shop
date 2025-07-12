@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, Button, Col, Form, Toast, ToastContainer } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
@@ -51,7 +52,15 @@ const ProductItem: React.FC<Props> = ({ product }) => {
             />
           </div>
           <Card.Body className="d-flex flex-column">
-            <Card.Title>{product.title}</Card.Title>
+            <Card.Title>
+              <Link
+                to={`/product/${product.id}`}
+                className="product-title-link"
+                style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}
+              >
+                {product.title}
+              </Link>
+            </Card.Title>
             <Card.Text style={{ flexGrow: 1, overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}>
               {product.description}
             </Card.Text>

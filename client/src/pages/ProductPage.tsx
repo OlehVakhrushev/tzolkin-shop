@@ -1,75 +1,41 @@
-// src/pages/CollectionPage.tsx
 
-import React, { useEffect, useState } from "react";
+
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Card, Button, Spinner, Alert, Toast, ToastContainer } from "react-bootstrap";
-import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store/store";
+import { Button, Container, Card, Spinner, Alert, Toast, ToastContainer } from "react-bootstrap";
 import { addToCart } from "../store/cartSlice";
+import ProductDetails from "../components/ProductDetails";
 
-interface Collection {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  price: string;
-  ingredients?: string;
-  weight?: string;
-  country?: string;
-  rating?: number;
-  reviews?: number;
-}
-
-const CollectionPage: React.FC = () => {
+const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
-  const [collection, setCollection] = useState<Collection | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchCollection = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get(`http://localhost:4000/collections/${id}`);
-        setCollection(res.data);
-      } catch (err) {
-        setError("Failed to load collection");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchCollection();
-  }, [id]);
-
-
-  // Tabs and quantity state
   const [activeTab, setActiveTab] = useState<'description' | 'additional'>('description');
   const [quantity, setQuantity] = useState(1);
   const [showToast, setShowToast] = useState(false);
+  const product = useSelector((state: RootState) =>
+    state.products.items.find((p) => String(p.id) === String(id))
+  );
+  if (!product) return <div style={{ color: '#fff', textAlign: 'center', marginTop: 80 }}>Product not found</div>;
 
   const handleAddToCart = () => {
-    if (collection) {
-      dispatch(addToCart({ product: collection, quantity }));
-      setShowToast(true);
-      setQuantity(1);
-    }
+    dispatch(addToCart({ product, quantity }));
+    setShowToast(true);
+    setQuantity(1);
   };
-
-  if (loading) return <div className="text-center py-5"><Spinner animation="border" /></div>;
-  if (error) return <Alert variant="danger">{error}</Alert>;
-  if (!collection) return null;
 
   return (
     <Container className="my-5">
       <Card className="shadow-sm p-3">
-        <Card.Img variant="top" src={collection.image} style={{ maxHeight: 400, objectFit: "cover" }} />
+        <Card.Img variant="top" src={product.image} style={{ maxHeight: 400, objectFit: "cover" }} />
         <Card.Body>
-          <Card.Title>{collection.title}</Card.Title>
+          <Card.Title>{product.title}</Card.Title>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
             <span style={{ color: '#FFD700', fontSize: 22 }}>★</span>
-            <span style={{ fontWeight: 600, fontSize: 18 }}>{collection.rating || 4.8}</span>
-            <span style={{ color: '#888', fontSize: 15 }}>&nbsp;({collection.reviews || 47} Reviews)</span>
+            <span style={{ fontWeight: 600, fontSize: 18 }}>{product.rating || 4.8}</span>
+            <span style={{ color: '#888', fontSize: 15 }}>&nbsp;({product.reviews || 47} Reviews)</span>
           </div>
           <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
             <Button
@@ -89,16 +55,12 @@ const CollectionPage: React.FC = () => {
           </div>
           <div style={{ minHeight: 60, marginBottom: 16 }}>
             {activeTab === 'description' ? (
-              <div>{collection.description}</div>
+              <div>{product.description}</div>
             ) : (
-              <>
-                <Card.Text><strong>Weight:</strong> {collection.weight || '-'}</Card.Text>
-                <Card.Text><strong>Country:</strong> {collection.country || '-'}</Card.Text>
-                <Card.Text><strong>Ingredients:</strong> {collection.ingredients || '-'}</Card.Text>
-              </>
+              <ProductDetails product={product} />
             )}
           </div>
-          <Card.Text className="text-success fw-bold">{collection.price}</Card.Text>
+          <Card.Text className="text-success fw-bold">{product.price}</Card.Text>
           <div className="d-flex align-items-center mb-3">
             <Button
               variant="outline-secondary"
@@ -132,8 +94,8 @@ const CollectionPage: React.FC = () => {
           {/* Секция отзывов */}
           <div style={{ marginTop: 32 }}>
             <h5>Reviews</h5>
-            <div style={{ color: '#FFD700', fontSize: 20, marginBottom: 4 }}>★ {collection.rating || 4.8} / 5</div>
-            <div style={{ color: '#888', fontSize: 15, marginBottom: 8 }}>{collection.reviews || 47} reviews</div>
+            <div style={{ color: '#FFD700', fontSize: 20, marginBottom: 4 }}>★ {product.rating || 4.8} / 5</div>
+            <div style={{ color: '#888', fontSize: 15, marginBottom: 8 }}>{product.reviews || 47} reviews</div>
             <div style={{ color: '#aaa', fontSize: 14 }}>
               {/* Здесь могут быть отзывы пользователей */}
               No reviews yet.
@@ -143,11 +105,11 @@ const CollectionPage: React.FC = () => {
       </Card>
       <ToastContainer position="bottom-end" className="p-3">
         <Toast onClose={() => setShowToast(false)} show={showToast} delay={2000} autohide bg="success">
-          <Toast.Body className="text-white">✅ {collection.title} added to cart!</Toast.Body>
+          <Toast.Body className="text-white">✅ {product.title} added to cart!</Toast.Body>
         </Toast>
       </ToastContainer>
     </Container>
   );
 };
 
-export default CollectionPage;
+export default ProductPage;

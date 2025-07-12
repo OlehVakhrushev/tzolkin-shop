@@ -5,7 +5,10 @@
     "description": "A delightful assortment of chocolate infused with dried strawberries and honey.",
     "image": "/images/strawberry_collection.png",
     "price": "$45",
-    "ingredients": "Cacao mass, honey, dried strawberries"
+    "ingredients": "Cacao mass, honey, dried strawberries",
+    "rating": 4.9,
+    "reviews": 61,
+    "sku": "col-1"
   },
   {
     "id": 2,
@@ -13,7 +16,10 @@
     "description": "Rich chocolate paired with crunchy almonds and hazelnuts from ancient forests.",
     "image": "/images/forest_nuts_collection.png",
     "price": "$50",
-    "ingredients": "Cacao mass, honey, and forest nuts"
+    "ingredients": "Cacao mass, honey, and forest nuts",
+    "rating": 4.8,
+    "reviews": 54,
+    "sku": "col-2"
   },
   {
     "id": 3,
@@ -21,6 +27,9 @@
     "description": "Tropical mango meets silky cacao in this exotic chocolate experience.",
     "image": "/images/mango_collection.png",
     "price": "$45",
-    "ingredients": "Cacao mass, honey, dried mango"
+    "ingredients": "Cacao mass, honey, dried mango",
+    "rating": 4.7,
+    "reviews": 49,
+    "sku": "col-3"
   }
 ]
