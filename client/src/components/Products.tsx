@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Products: React.FC = () => {
   const navigate = useNavigate();
@@ -32,7 +32,15 @@ const Products: React.FC = () => {
             <Card>
               <Card.Img variant="top" src={product.img} />
               <Card.Body>
-                <Card.Title>{product.title}</Card.Title>
+                <Card.Title>
+                  <Link
+                    to={`/product/${index + 1}`}
+                    className="product-title-link"
+                    style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}
+                  >
+                    {product.title}
+                  </Link>
+                </Card.Title>
                 <Card.Text>{product.description}</Card.Text>
                 <Button variant="primary" onClick={() => navigate("/products")}>
                   View All Products

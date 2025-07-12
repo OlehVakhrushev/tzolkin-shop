@@ -1,3 +1,53 @@
+/* Подсветка золотым для product-title-link */
+.product-title-link:hover, .product-title-link:focus {
+  color: #FFD700 !important;
+  text-shadow: 0 0 8px #FFD700, 0 0 16px #FFD700;
+}
+/* Майянская декоративная рамка средствами CSS/SVG */
+.maya-border-css {
+  position: relative;
+  padding: 32px;
+  background: rgba(255,255,240,0.92);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #0002;
+  z-index: 1;
+}
+.maya-border-css::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  z-index: 2;
+  pointer-events: none;
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="384" height="384" rx="18" fill="none" stroke="%23d4af37" stroke-width="16"/><rect x="0" y="0" width="400" height="400" rx="32" fill="none" stroke="%236b4e00" stroke-width="8"/></svg>');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+/* Майянская декоративная рамка средствами CSS/SVG */
+.maya-border-css {
+  position: relative;
+  padding: 32px;
+  background: rgba(255,255,240,0.92);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #0002;
+  z-index: 1;
+}
+.maya-border-css::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  z-index: 2;
+  pointer-events: none;
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="384" height="384" rx="18" fill="none" stroke="%23d4af37" stroke-width="16"/><rect x="0" y="0" width="400" height="400" rx="32" fill="none" stroke="%236b4e00" stroke-width="8"/><g stroke="%23a67c00" stroke-width="4"><path d="M32 32h24v24H32z"/><path d="M344 32h24v24h-24z"/><path d="M32 344h24v24H32z"/><path d="M344 344h24v24h-24z"/></g></svg>');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+/* Эффект золотого свечения для названия товара */
+.product-title-link:hover {
+  color: #FFD700 !important;
+  text-shadow: 0 0 8px #FFD700, 0 0 16px #FFD700;
+}
 /* === Общий шрифт === */
 body, button, input, h1, h2, h3, h4, h5, h6 {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;

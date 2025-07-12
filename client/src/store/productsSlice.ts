@@ -11,6 +11,9 @@ export interface Product {
   weight?: string;
   ingredients?: string;
   country?: string;
+  rating?: number;
+  reviews?: number;
+  sku?: string;
 }
 
 interface ProductsState {
